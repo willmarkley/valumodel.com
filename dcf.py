@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import datetime
+from jinja2 import Environment, FileSystemLoader
 
 ##### Global Variables (Dictionaries)
 
@@ -53,13 +54,26 @@ for year in years:
 
 tax_rate = 0.38
 
+sales_growth_rate_1_year_out = 0.08
+sales_growth_rate_2_year_out = 0.07
+## step down until year 5 is between 2% & 4%
+sga_percentage_of_sales = 0.47
+d_a_percentage_of_capex = 0.01  ## or % of sales
+## ensure that terminal year d&a = capex
 
+## have user input capex projections or project as % of sales
+
+## project NWC as percentage of sales or have user input data
+## calc YoY changes
+##### May NEED a lot of Calculations for this
 
 ##### Calculate formulae of DCF
 
 
 for year in historical_years:
+	# Calculate Revenue Growth Rate
 	fcf[('Gross Profit',year)]   = fcf[('Revenue',year)]      - fcf[('Cost of Goods Sold',year)]
+	# Calculate Gross Margin
 	fcf[('EBITDA',year)]         = fcf[('Gross Profit',year)] - fcf[('Selling, General, & Administrative',year)]
 	fcf[('EBIT',year)]           = fcf[('EBITDA',year)]       - fcf[('Depreciation & Amortization',year)]
 	fcf[('Taxes',year)]          = tax_rate * fcf[('EBIT',year)]
@@ -67,7 +81,9 @@ for year in historical_years:
 	fcf[('Free Cash Flow',year)] = fcf[('EBIAT',year)]        + fcf[('Depreciation & Amortization',year)] - fcf[('Increase in Net Working Capital',year)] - fcf[('Capital Expenditures',year)]
 
 for year in projected_years:
+	# use growth rate assumptions to calculate revenue
 	fcf[('Gross Profit',year)] = 7777
+	# calculate average gross margin
 	fcf[('EBITDA',year)] = 7777
 	fcf[('EBIT',year)] = 7777
 	fcf[('Taxes',year)] = 7777
@@ -81,12 +97,16 @@ for year in projected_years:
 
 ## JUST PRINT
 
-print '\n\n'
 
 lines = ['Revenue', 'Cost of Goods Sold', 'Gross Profit', 'Selling, General, & Administrative', 'EBITDA', 'Depreciation & Amortization', 'EBIT', 'Taxes', 'EBIAT', 'Depreciation & Amortization', 'Increase in Net Working Capital', 'Capital Expenditures', 'Free Cash Flow']
+env = Environment(loader = FileSystemLoader('/Users/willjmarkley/Desktop/valumodel.com'))
+template = env.get_template('dcf.html')
+print template.render(rows=lines, historical_years=historical_years, fcf=fcf, projected_years=projected_years, years=years)
 
+
+'''
+print '\n\n'
 print '\t\t\t\t\t\t\t',
-
 for year in years:
 	print str(year)+'\t',
 
@@ -102,5 +122,7 @@ lines = ['WACC', 'Discount Period', 'Discount Factor', 'Present Value of Free Ca
 for field in lines:
 	print '\t'+field
 
-
 print '\n\n'
+
+'''
+

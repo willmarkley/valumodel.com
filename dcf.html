@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html>
+<head>
+	<link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+	<div class="dcf">
+		<div class="header">
+			<p class="company-name">Apple Inc. (AAPL)<p>
+			<p class="analysis-name">Discounted Cash Flow Analysis</p>
+			<p class="units">($ in millions, fiscal year ending December 31)</p>
+		</div>
+		<div class="free_cash_flow">
+			<div style="padding-top:12px; padding-bottom:7px;">
+				<div class="header subheader historical">Historical</div>
+				<div class="header subheader projected">Projected</div>
+			</div>
+			<div class="row">
+				<div class="field"> </div>
+				{% for year in historical_years %}
+					<div class="year">{{ year }}</div>
+				{% endfor %}
+				<div class="divider"> </div>
+				{% for year in projected_years %}
+					<div class="year">{{ year }}</div>
+				{% endfor %}
+			</div>
+			{% for field in rows %}
+				<div class="row">
+					<div class="field">{{ field }}</div>
+					{% for year in historical_years %}
+						<div class="entry">{{ fcf[(field,year)] }}    </div>
+					{% endfor %}
+					<div class="divider">|</div>
+					{% for year in projected_years %}
+						<div class="entry">{{ fcf[(field,year)] }}    </div>
+					{% endfor %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+</html>
