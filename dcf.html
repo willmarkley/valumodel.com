@@ -29,17 +29,34 @@
 			</div>
 			{% for field in rows %}
 				<div class="row">
-					<div class="field">{{ field }}</div>
+					{% if field in important_fields %}
+						<div class="field important_field">{{ field }}</div>
+					{% else %}
+						<div class="field regular_field">{{ field }}</div>
+					{% endif %}
 					{% for year in historical_years %}
-						<div class="entry">{{ fcf[(field,year)] }}    </div>
+						{% if field in data_fields %}
+							<div class="entry data_field">{{ fcf[(field,year)] }}    </div>
+						{% elif field=='Free Cash Flow' %}
+							<div class="entry answer">{{ fcf[(field,year)] }}    </div>
+						{% else %}
+							<div class="entry">{{ fcf[(field,year)] }}    </div>
+						{% endif %}
 					{% endfor %}
 					<div class="divider">|</div>
 					{% for year in projected_years %}
-						<div class="entry">{{ fcf[(field,year)] }}    </div>
+						{% if field in user_fields %}
+							<div class="entry user_field">{{ fcf[(field,year)] }}    </div>
+						{% elif field=='Free Cash Flow' %}
+							<div class="entry answer">{{ fcf[(field,year)] }}    </div>
+						{% else %}
+							<div class="entry">{{ fcf[(field,year)] }}    </div>
+						{% endif %}
 					{% endfor %}
 				</div>
 			{% endfor %}
 		</div>
 	</div>
+	<!-- <a href="css" style="margin:20px;">Return to Assumptions</a> -->
 </body>
 </html>

@@ -11,6 +11,7 @@ p {
 	width:1026px;
 	margin:0;
 	padding:0;
+	float:left;
 }
 
 .header {
@@ -65,11 +66,32 @@ p {
 		white-space: pre;
 	}
 	
+	.important_field {
+		font-weight:bold
+	}
+	
+	.regular_field {
+		padding-left:20px;
+		width:254px;
+	}
+	
 	.entry {
 		width:80px;
 		float:left;
 		text-align:right;
 		white-space: pre;
+	}
+	
+	.data_field {
+		color:blue;
+	}
+	
+	.user_field {
+		background-color:#c6ebd8;
+	}
+	
+	.answer {
+		border-top:thin solid #000000;
 	}
 	
 	.divider {
