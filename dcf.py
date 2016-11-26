@@ -2,6 +2,8 @@
 
 import datetime
 from calc_fcf import calc_fcf
+from calc_wacc import calc_wacc
+from calc_enter_val import calc_enter_val
 from user_assumptions import user_assumptions
 from calc_database import calc_database
 from output import output
@@ -19,31 +21,19 @@ implied_perpetuity_growth_rate = {}
 implied_EV_EBITA = {}
 assumptions = {}
 
-
-#curr_year = datetime.datetime.now().year
-curr_year = 2008
-### Initialize years
+### Years
+curr_year = 2008   #curr_year = datetime.datetime.now().year
 historical_years = [curr_year-3, curr_year-2, curr_year-1, curr_year]
 projected_years  = [curr_year+1, curr_year+2, curr_year+3, curr_year+4, curr_year+5]
 
-total_debt = 40
-debt_coupon_rate = 0.06
-debt_par_value = 1000
-debt_market_price = 900
-total_equity = 100
+
+##### Main Execution
+
+fcf              = calc_database(fcf, historical_years)
+assumptions      = user_assumptions(assumptions)
+fcf              = calc_fcf(fcf, assumptions, curr_year, historical_years, projected_years)
+wacc             = calc_wacc(wacc, assumptions)
+enterprise_value = calc_enter_val(enterprise_value, assumptions, fcf, wacc, curr_year, projected_years)
 
 
-fcf = calc_database(fcf, historical_years)
-assumptions = user_assumptions(assumptions)
-fcf         = calc_fcf(fcf, assumptions, curr_year, historical_years, projected_years)
-output(fcf, curr_year, historical_years, projected_years)
-
-
-###### Calculate WACC
-
-percent_debt = total_debt / (total_debt + total_equity)
-percent_equity = 1 - percent_debt
-
-debt_cash_inflows = debt_coupon_rate * debt_par_value
-current_yield = debt_cash_inflows/debt_market_price
-cost_of_debt = current_yield*(1-assumptions['Tax Rate'])
+output(fcf, curr_year, historical_years, projected_years, wacc)

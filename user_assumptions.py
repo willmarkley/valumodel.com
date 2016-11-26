@@ -7,6 +7,7 @@ def user_assumptions(assumptions):
 	assumptions['d&a % of sales'] = 0.02
 	assumptions['capex % of sales'] = 0.02
 	assumptions['nwc % of sales'] = 0.07
+	assumptions['Exit Multiple'] = 7.0
 
 	return assumptions
 

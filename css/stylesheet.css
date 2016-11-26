@@ -24,6 +24,7 @@ p {
 	height:14px;
 	font-size:12px;
 	text-align:center;
+	width:300px;
 }
 
 	.company-name {
@@ -39,6 +40,10 @@ p {
 		padding-left:10px;
 		font-size:50%;
 	}
+	
+.free_cash_flow {
+	margin-bottom:30px;
+}
 	
 .historical {
 	width:320px;
@@ -80,6 +85,11 @@ p {
 		float:left;
 		text-align:right;
 		white-space: pre;
+	}
+	
+	.subfield {
+		width:220px;
+		float:left;
 	}
 	
 	.data_field {

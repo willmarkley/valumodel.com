@@ -27,7 +27,7 @@
 					<div class="year">{{ year }}</div>
 				{% endfor %}
 			</div>
-			{% for field in rows %}
+			{% for field in rows_fcf %}
 				<div class="row">
 					{% if field in important_fields %}
 						<div class="field important_field">{{ field }}</div>
@@ -55,9 +55,35 @@
 					{% endfor %}
 				</div>
 			{% endfor %}
+			<div class="row">
+				<div class="field regular_field">{{ 'WACC' }}</div>
+				<div class="entry">{{ wacc['WACC'] }}    </div>
+			</div>
+			{% for field in rows_pfcf %}
+				<div class="row">
+					<div class="field regular_field" style="width:594px;">{{ field }}</div>
+					{% for year in projected_years %}
+						{% if field=='Present Value of Free Cash Flow' %}
+							<div class="entry answer">{{ fcf[(field,year)] }}    </div>
+						{% else %}
+							<div class="entry">{{ fcf[(field,year)] }}    </div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			{% endfor %}
 		</div>
 		<div class="wacc">
-		
+			<div class="header subheader ">Weighted Average Cost of Capital</div>
+			{% for field in rows_wacc %}
+				<div class="row">
+					<div class="subfield">{{ field }}</div>
+					{% if field=='WACC' %}
+						<div class="entry answer">{{ wacc[field] }}    </div>
+					{% else %}
+						<div class="entry">{{ wacc[field] }}    </div>
+					{% endif %}
+				</div>
+			{% endfor %}
 		</div>
 	</div>
 	<!-- <a href="css" style="margin:20px;">Return to Assumptions</a> -->
