@@ -4,6 +4,7 @@ import datetime
 from calc_fcf import calc_fcf
 from calc_wacc import calc_wacc
 from calc_enter_val import calc_enter_val
+from calc_equity_val import calc_equity_val
 from user_assumptions import user_assumptions
 from calc_database import calc_database
 from output import output
@@ -17,8 +18,6 @@ fcf = {}
 wacc = {}
 enterprise_value = {}
 implied_equity_value = {}
-implied_perpetuity_growth_rate = {}
-implied_EV_EBITA = {}
 assumptions = {}
 
 ### Years
@@ -29,11 +28,11 @@ projected_years  = [curr_year+1, curr_year+2, curr_year+3, curr_year+4, curr_yea
 
 ##### Main Execution
 
-fcf              = calc_database(fcf, historical_years)
-assumptions      = user_assumptions(assumptions)
-fcf              = calc_fcf(fcf, assumptions, curr_year, historical_years, projected_years)
-wacc             = calc_wacc(wacc, assumptions)
-enterprise_value = calc_enter_val(enterprise_value, assumptions, fcf, wacc, curr_year, projected_years)
+fcf                  = calc_database(fcf, historical_years)
+assumptions          = user_assumptions(assumptions)
+fcf                  = calc_fcf(fcf, assumptions, curr_year, historical_years, projected_years)
+wacc                 = calc_wacc(wacc, assumptions)
+enterprise_value     = calc_enter_val(enterprise_value, assumptions, fcf, wacc, curr_year, projected_years)
+implied_equity_value = calc_equity_val(implied_equity_value, enterprise_value)
 
-
-output(fcf, curr_year, historical_years, projected_years, wacc)
+output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value)

@@ -61,7 +61,11 @@
 			</div>
 			{% for field in rows_pfcf %}
 				<div class="row">
-					<div class="field regular_field" style="width:594px;">{{ field }}</div>
+					{% if field=='Present Value of Free Cash Flow' %}
+						<div class="field important_field" style="width:614px;">{{ field }}</div>
+					{% else %}
+						<div class="field regular_field" style="width:594px;">{{ field }}</div>
+					{% endif %}
 					{% for year in projected_years %}
 						{% if field=='Present Value of Free Cash Flow' %}
 							<div class="entry answer">{{ fcf[(field,year)] }}    </div>
@@ -75,11 +79,43 @@
 		<div class="wacc">
 			<div class="header subheader ">Weighted Average Cost of Capital</div>
 			{% for field in rows_wacc %}
-				<div class="row">
-					<div class="subfield">{{ field }}</div>
+				<div class="row subrow">
 					{% if field=='WACC' %}
+						<div class="subfield important_field">{{ field }}</div>
 						<div class="entry answer">{{ wacc[field] }}    </div>
 					{% else %}
+						<div class="subfield">{{ field }}</div>
+						<div class="entry">{{ wacc[field] }}    </div>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+		<div class="enterprise_value">
+			<div class="header subheader ">Enterprise Value</div>
+			{% for field in rows_enter_val %}
+				<div class="row subrow">
+					{% if field in important_fields %}
+						<div class="subfield important_field">{{ field }}</div>
+						<div class="entry answer">{{ enterprise_value[field] }}    </div>
+					{% elif field=='Exit Multiple' %}
+						<div class="subfield">{{ field }}</div>
+						<div class="entry user_field">{{ enterprise_value[field] }}    </div>
+					{% else %}
+						<div class="subfield">{{ field }}</div>
+						<div class="entry">{{ enterprise_value[field] }}    </div>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+		<div class="implied_equity_value">
+			<div class="header subheader ">Implied Equity Value</div>
+			{% for field in rows_wacc %}
+				<div class="row subrow">
+					{% if field=='WACC' %}
+						<div class="subfield important_field">{{ field }}</div>
+						<div class="entry answer">{{ wacc[field] }}    </div>
+					{% else %}
+						<div class="subfield">{{ field }}</div>
 						<div class="entry">{{ wacc[field] }}    </div>
 					{% endif %}
 				</div>
