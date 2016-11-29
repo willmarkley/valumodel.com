@@ -8,9 +8,9 @@
 <body>
 	<div class="dcf">
 		<div class="header">
-			<p class="company-name">Apple Inc. (AAPL)<p>
+			<p class="company-name">{{ name }} ({{ ticker }})<p>
 			<p class="analysis-name">Discounted Cash Flow Analysis</p>
-			<p class="units">($ in millions, fiscal year ending December 31)</p>
+			<p class="units">($ in millions)</p>
 		</div>
 		<div class="free_cash_flow">
 			<div style="padding-top:12px; padding-bottom:7px;">
@@ -107,17 +107,12 @@
 				</div>
 			{% endfor %}
 		</div>
-		<div class="implied_equity_value">
-			<div class="header subheader ">Implied Equity Value</div>
-			{% for field in rows_wacc %}
+		<div class="user_assumptions">
+			<div class="header subheader ">User Assumptions</div>
+			{% for field in rows_assumpt %}
 				<div class="row subrow">
-					{% if field=='WACC' %}
-						<div class="subfield important_field">{{ field }}</div>
-						<div class="entry answer">{{ wacc[field] }}    </div>
-					{% else %}
 						<div class="subfield">{{ field }}</div>
-						<div class="entry">{{ wacc[field] }}    </div>
-					{% endif %}
+						<div class="entry user_field">{{ assumptions[field] }}    </div>
 				</div>
 			{% endfor %}
 		</div>

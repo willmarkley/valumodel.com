@@ -14,7 +14,7 @@ p {
 	float:left;
 }
 
-.wacc, .enterprise_value, .implied_equity_value {
+.wacc, .enterprise_value, .user_assumptions {
 	width:300px;
 	padding-left:21px;
 	padding-right:21px;

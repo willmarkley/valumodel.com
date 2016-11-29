@@ -2,7 +2,7 @@
 
 from jinja2 import Environment, FileSystemLoader
 
-def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value):
+def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value, assumptions, name, ticker):
 	data_fields = ['Revenue', 'Cost of Goods Sold', 'Selling, General, & Administrative', 'Depreciation & Amortization', 'Capital Expenditures']
 	user_fields = ['Growth Rate', 'Selling, General, & Administrative', 'Depreciation & Amortization', 'Capital Expenditures']
 	important_fields = ['Revenue','Gross Profit', 'EBITDA', 'EBIT', 'EBIAT', 'Free Cash Flow', 'Terminal Value', 'Present Value of Terminal Value', 'Enterprise Value']
@@ -12,6 +12,7 @@ def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_v
 	rows_pfcf = ['Discount Factor','Present Value of Free Cash Flow']
 	rows_wacc = ['Cost of Debt', '% Debt', 'Cost of Equity', '% Equity', 'WACC']
 	rows_enter_val = ['Terminal Year EBITDA', 'Exit Multiple', 'Terminal Value', 'Discount Factor', 'Present Value of Terminal Value', 'Cumulative Present Value of FCF', 'Enterprise Value']
+	rows_assumpt = ['Tax Rate', 'Growth Rate 1 year out', 'sga % of sales', 'd&a % of sales', 'capex % of sales', 'nwc % of sales','Exit Multiple']
 
 	for row in rows_fcf:
 		for year in years:
@@ -50,4 +51,4 @@ def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_v
 
 	env = Environment(loader = FileSystemLoader('/Users/willjmarkley/Desktop/valumodel.com'))
 	template = env.get_template('dcf.html')
-	print template.render(rows_fcf=rows_fcf, historical_years=historical_years, fcf=fcf, projected_years=projected_years, years=years, data_fields=data_fields, user_fields=user_fields, important_fields=important_fields, wacc=wacc, rows_wacc=rows_wacc, rows_pfcf=rows_pfcf, rows_enter_val=rows_enter_val, enterprise_value=enterprise_value)
+	print template.render(name=name, ticker=ticker, rows_fcf=rows_fcf, historical_years=historical_years, fcf=fcf, projected_years=projected_years, years=years, data_fields=data_fields, user_fields=user_fields, important_fields=important_fields, wacc=wacc, rows_wacc=rows_wacc, rows_pfcf=rows_pfcf, rows_enter_val=rows_enter_val, enterprise_value=enterprise_value, rows_assumpt=rows_assumpt, assumptions=assumptions)

@@ -4,12 +4,14 @@ import datetime
 from calc_fcf import calc_fcf
 from calc_wacc import calc_wacc
 from calc_enter_val import calc_enter_val
-from calc_equity_val import calc_equity_val
 from user_assumptions import user_assumptions
 from calc_database import calc_database
 from output import output
 
-##### Global Variables (Dictionaries)
+##### Global Variables
+
+name = 'General Electric'
+ticker = 'GE'
 
 ### Tuple, Value Dictionaries (field, year) = value
 fcf = {}
@@ -33,6 +35,6 @@ assumptions          = user_assumptions(assumptions)
 fcf                  = calc_fcf(fcf, assumptions, curr_year, historical_years, projected_years)
 wacc                 = calc_wacc(wacc, assumptions)
 enterprise_value     = calc_enter_val(enterprise_value, assumptions, fcf, wacc, curr_year, projected_years)
-implied_equity_value = calc_equity_val(implied_equity_value, enterprise_value)
+#implied_equity_value = calc_equity_val(implied_equity_value, enterprise_value)
 
-output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value)
+output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value, assumptions, name, ticker)
