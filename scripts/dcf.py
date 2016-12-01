@@ -14,4 +14,4 @@ def create_dcf(req, tax_rate, growth_rate_1_year_out, sga_of_sales, da_of_sales,
 	assumptions['NWC % of sales']         = float(nwc_of_sales)/100.0
 	assumptions['Exit Multiple']          = float(exit_multiple)
 
-	return calc_dcf()
+	return calc_dcf(assumptions)
