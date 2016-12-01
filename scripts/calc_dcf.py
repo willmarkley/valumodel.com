@@ -11,7 +11,7 @@ from user_assumptions import user_assumptions
 from calc_database import calc_database
 from output import output
 
-def calc_dcf():
+def calc_dcf(assumptions):
 	##### Global Variables
 
 	name = 'General Electric'
@@ -24,7 +24,6 @@ def calc_dcf():
 	wacc = {}
 	enterprise_value = {}
 	implied_equity_value = {}
-	assumptions = {}
 
 	### Years
 	curr_year = 2008   #curr_year = datetime.datetime.now().year
@@ -35,10 +34,8 @@ def calc_dcf():
 	##### Main Execution
 
 	fcf                  = calc_database(fcf, historical_years)
-	assumptions          = user_assumptions(assumptions)
 	fcf                  = calc_fcf(fcf, assumptions, curr_year, historical_years, projected_years)
 	wacc                 = calc_wacc(wacc, assumptions)
 	enterprise_value     = calc_enter_val(enterprise_value, assumptions, fcf, wacc, curr_year, projected_years)
-	#implied_equity_value = calc_equity_val(implied_equity_value, enterprise_value)
 
 	return output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value, assumptions, name, ticker)

@@ -13,7 +13,7 @@ def calc_fcf(fcf, assumptions, curr_year, historical_years, projected_years):
 	### Calculate Historical Years
 	for year in historical_years:
 		# REVENUE
-		fcf[('Net Working Capital',year)] = assumptions['nwc % of sales']*fcf[('Revenue',year)]
+		fcf[('Net Working Capital',year)] = assumptions['NWC % of sales']*fcf[('Revenue',year)]
 		if year != (curr_year-3):
 			fcf[('Growth Rate',year)]  = ((fcf[('Revenue',year)]/fcf[('Revenue',year-1)]) - 1)*100
 			fcf[('Increase in Net Working Capital',year)] = fcf[('Net Working Capital',year)] - fcf[('Net Working Capital',year-1)]
@@ -43,16 +43,16 @@ def calc_fcf(fcf, assumptions, curr_year, historical_years, projected_years):
 		fcf[('Gross Profit',year)] = (fcf[('Gross Margin',year)]/100)*fcf[('Revenue',year)]
 		fcf[('Cost of Goods Sold',year)] = fcf[('Revenue',year)] - fcf[('Gross Profit',year)]
 	
-		fcf[('Selling, General, & Administrative',year)] = assumptions['sga % of sales']*fcf[('Revenue',year)]
+		fcf[('Selling, General, & Administrative',year)] = assumptions['SGA % of sales']*fcf[('Revenue',year)]
 		fcf[('EBITDA',year)] = fcf[('Gross Profit',year)] - fcf[('Selling, General, & Administrative',year)]
 	
-		fcf[('Depreciation & Amortization',year)] = assumptions['d&a % of sales']*fcf[('Revenue',year)]
+		fcf[('Depreciation & Amortization',year)] = assumptions['D&A % of sales']*fcf[('Revenue',year)]
 		fcf[('EBIT',year)] = fcf[('EBITDA',year)]       - fcf[('Depreciation & Amortization',year)]
 		fcf[('Taxes',year)] = assumptions['Tax Rate'] * fcf[('EBIT',year)]
 		fcf[('EBIAT',year)] = fcf[('EBIT',year)]         - fcf[('Taxes',year)]
 		# D&A
-		fcf[('Capital Expenditures',year)] = assumptions['capex % of sales']*fcf[('Revenue',year)]
-		fcf[('Net Working Capital',year)] = assumptions['nwc % of sales']*fcf[('Revenue',year)]
+		fcf[('Capital Expenditures',year)] = assumptions['CAPEX % of sales']*fcf[('Revenue',year)]
+		fcf[('Net Working Capital',year)] = assumptions['NWC % of sales']*fcf[('Revenue',year)]
 		fcf[('Increase in Net Working Capital',year)] = fcf[('Net Working Capital',year)] - fcf[('Net Working Capital',year-1)]
 		fcf[('Free Cash Flow',year)] = fcf[('EBIAT',year)]        + fcf[('Depreciation & Amortization',year)] - fcf[('Increase in Net Working Capital',year)] - fcf[('Capital Expenditures',year)]
 
