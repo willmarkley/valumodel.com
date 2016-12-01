@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
 import datetime
+import sys
+sys.path.append('/var/www/html/valumodel.com/scripts')
+
 from calc_fcf import calc_fcf
 from calc_wacc import calc_wacc
 from calc_enter_val import calc_enter_val

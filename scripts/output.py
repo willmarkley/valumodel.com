@@ -27,14 +27,7 @@ def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_v
 				fcf[(row,year)] = round( fcf[(row,year)],2)
 			else:
 				fcf[(row,year)] = round( fcf[(row,year)],1)
-	
-	'''		
-	for row in rows_fcf:
-		for year in years:
-			if fcf[(row,year)]==0:
-				fcf[(row,year)] = '-'
-	'''
-			
+
 	for row in rows_wacc:
 		wacc[row] = str( round( wacc[row],1) )+"%"
 
@@ -49,6 +42,6 @@ def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_v
 	fcf[('Growth Rate',(curr_year-3))] = ""
 	fcf[('Increase in Net Working Capital',(curr_year-3))] = ""
 
-	env = Environment(loader = FileSystemLoader('/Users/willjmarkley/Desktop/valumodel.com'))
+	env = Environment(loader = FileSystemLoader('/var/www/html/valumodel.com/html/templates'))
 	template = env.get_template('dcf.html')
 	print template.render(name=name, ticker=ticker, rows_fcf=rows_fcf, historical_years=historical_years, fcf=fcf, projected_years=projected_years, years=years, data_fields=data_fields, user_fields=user_fields, important_fields=important_fields, wacc=wacc, rows_wacc=rows_wacc, rows_pfcf=rows_pfcf, rows_enter_val=rows_enter_val, enterprise_value=enterprise_value, rows_assumpt=rows_assumpt, assumptions=assumptions)
