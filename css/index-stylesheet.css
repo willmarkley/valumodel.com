@@ -32,6 +32,11 @@ a {
 	text-align:center;
 }
 
+.link-button {
+	margin:auto;
+	width:250px;
+}
+
 i{
 	margin-left:30px;
 	color:#95a9b7;
