@@ -32,6 +32,11 @@ a {
 	text-align:center;
 }
 
+.title{
+	padding-top:250px;
+	font-size:300%;
+}
+
 .link-button {
 	margin:auto;
 	min-width:250px;
