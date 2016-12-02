@@ -34,7 +34,7 @@ a {
 
 .link-button {
 	margin:auto;
-	width:250px;
+	min-width:250px;
 }
 
 i{
@@ -54,4 +54,10 @@ i{
 .entry {
 	margin: auto;
 	max-width:580px;
+	padding-bottom:12px;
+}
+
+.copyright {
+	font-size:12px;
+	text-align:center;
 }
