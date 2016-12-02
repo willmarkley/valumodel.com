@@ -1,3 +1,29 @@
 body {
-	font-family: "Open Sans", sans-serif;
+	font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+.landing {
+	background-color:#36454f;
+	min-height:700px;
+}
+
+h1, p {
+	color:white;
+}
+
+a {
+	color:#36454f;
+	margin-left:3px;
+}
+
+i{
+	margin-left:12px;
+}
+
+.stack {
+	min-height:250px;
+}
+
+.name {
+	font-weight:bold;
 }
