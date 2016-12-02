@@ -1,18 +1,26 @@
+div {
+	margin:0;
+	padding:0;
+}
+
 body {
 	font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	margin:0;
+	padding:0;
 }
 
 .landing {
-	background-color:#36454f;
+	background-color:#95a9b7;
 	min-height:700px;
 }
 
 h1, p {
 	color:white;
+	text-align:center;
 }
 
 a {
-	color:#36454f;
+	color:#00004d;
 	margin-left:3px;
 }
 
