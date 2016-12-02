@@ -14,14 +14,21 @@ body {
 	min-height:700px;
 }
 
-h1, p {
+.white {
 	color:white;
+}
+
+h1, p, h3 {
 	text-align:center;
+	margin:0;
+	padding:0;
+	width:600px;
 }
 
 a {
 	color:#00004d;
 	margin-left:3px;
+	text-decoration:none;
 }
 
 i{
@@ -32,6 +39,7 @@ i{
 	min-height:250px;
 }
 
-.name {
-	font-weight:bold;
+.entry {
+	margin: auto;
+	width: 1026px;
 }
