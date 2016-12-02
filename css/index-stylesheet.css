@@ -34,11 +34,16 @@ a {
 
 i{
 	margin-left:12px;
+	color:#95a9b7;
 }
 
 .stack {
-	min-height:250px;
-	color:#b22613;
+	padding-top:30px;
+	min-height:200px;
+}
+
+.stack-header {
+	padding-bottom:20px;
 }
 
 .entry {
