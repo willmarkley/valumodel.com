@@ -2,20 +2,54 @@
 
 <html>
 <head>
-	<link rel="stylesheet" href="/valumodel.com/css/stylesheet.css">
+	<!-- <link rel="stylesheet" href="/valumodel.com/css/form-stylesheet.css"> -->
+	<link rel="stylesheet" href="../css/form-stylesheet.css">
 </head>
 
 <body>
-	<p>Assumptions</p>
+	<div class="header">
+		<a href="/">valumodel.com</a>
+	</div>
+	<div class="title">DCF Inputs & Assumptions</div>
 	<form action="/dcf/" method="POST" target="_blank">
-		Tax Rate (%):                  <input type="text" name="tax_rate"><br>
-		Growth Rate 1 year out (%):    <input type="text" name="growth_rate_1_year_out"><br>
-		SGA % of sales (%):            <input type="text" name="sga_of_sales"><br>
-		D&A % of sales (%):            <input type="text" name="da_of_sales"><br>
-		CAPEX % of sales (%):          <input type="text" name="capex_of_sales"><br>
-		NWC % of sales (%):            <input type="text" name="nwc_of_sales"><br>
-		Exit Multiple (x):             <input type="text" name="exit_multiple"><br>
-		<input type="submit">
+		<div class="row">
+			<div class="input-description">Tax Rate:                  </div>
+			<input type="text" name="tax_rate">
+			<div class="input-units">%</div>
+		</div>
+		<div class="row">
+			<div class="input-description">Growth Rate 1 year out:    </div>
+			<input type="text" name="growth_rate_1_year_out">
+			<div class="input-units">%</div>
+		</div>
+		<div class="row">
+			<div class="input-description">SGA % of sales:            </div>
+			<input type="text" name="sga_of_sales">
+			<div class="input-units">%</div>
+		</div>
+		<div class="row">
+			<div class="input-description">D&A % of sales:            </div>
+			<input type="text" name="da_of_sales">
+			<div class="input-units">%</div>
+		</div>
+		<div class="row">
+			<div class="input-description">CAPEX % of sales:          </div>
+			<input type="text" name="capex_of_sales">
+			<div class="input-units">%</div>
+		</div>
+		<div class="row">
+			<div class="input-description">NWC % of sales:            </div>
+			<input type="text" name="nwc_of_sales">
+			<div class="input-units">%</div>
+		</div>
+		<div class="row">
+			<div class="input-description">Exit Multiple:             </div>
+			<input type="text" name="exit_multiple">
+			<div class="input-units">x</div>
+		</div>
+		<div class="row">
+			<input type="submit" value="Create DCF">
+		</div>
 	</form>
 </body>
 </html>
