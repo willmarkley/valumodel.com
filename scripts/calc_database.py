@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import quandl
+#import quandl
 
 def calc_database(ticker, fcf):
 	data_revenue = [780.0, 850.0, 925.0, 1000.0]
