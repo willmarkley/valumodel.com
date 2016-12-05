@@ -11,6 +11,8 @@ def calc_database(ticker, fcf):
 	data_capex = [15.0, 18.0, 18.5, 20.0, 0,0,0,0,0]
 
 	i=0
+	curr_year=2016
+	historical_years = [curr_year-3, curr_year-2, curr_year-1, curr_year]
 	for year in historical_years:
 		key = ('Revenue',year) 
 		fcf[key] = data_revenue[i]
