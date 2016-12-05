@@ -1,6 +1,30 @@
 #!/usr/bin/python
 
-def calc_database(fcf, historical_years):
+import quandl
+
+def calc_database(ticker, fcf):
+	quandl.ApiConfig.api_key = 'PVS8XsdfoZhuSS34A__o'
+	indicators = [('REVENUE','Revenue'), ('GP','Cost of Goods Sold'), ('SGNA','Selling, General, & Administrative'), ('DEPAMOR','Depreciation & Amortization'), ('CAPEX','Capital Expenditures')]
+
+	for indicator in indicators:
+		code = 'SF0/'+ticker+'_'+indicator[0]+'_MRY'    ### generate database call
+		mydata = quandl.get(code, rows=4, returns="numpy")   ### return most recent 4 years as numpy array
+		if indicator[0] is 'REVENUE':
+			curr_year = mydata[-1][0].year   ### access last array's (most recent) datetime object's year attribute
+
+		i=0
+		start_year=curr_year-3
+		for i in range(4):
+			if indicator[0] is 'GP':    ### Revenue - Gross Profit = COGS
+				fcf[(indicator[1],start_year+i)] = (fcf[('Revenue',start_year+i)] - mydata[i][1]/1000000)
+			elif indicator[0] is 'CAPEX':  ### make capex positive
+				fcf[(indicator[1],start_year+i)] = -1*mydata[i][1]/1000000   ### access value of indicator in a year
+			else:
+				fcf[(indicator[1],start_year+i)] = mydata[i][1]/1000000   ### access value of indicator in a year
+
+	return (curr_year, fcf, 'General Electric')
+
+'''
 	data_revenue = [780.0, 850.0, 925.0, 1000.0]
 	#, 1080.0, 1144.8, 1190.6, 1226.3, 1263.1]
 	data_cogs = [471.9, 512.1, 555.0, 600.0, 0,0,0,0,0]
@@ -23,3 +47,4 @@ def calc_database(fcf, historical_years):
 		i = i+1
 		
 	return fcf
+'''

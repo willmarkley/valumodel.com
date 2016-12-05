@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-import datetime
 import sys
 sys.path.append('/var/www/html/valumodel.com/scripts')
 
@@ -11,12 +10,9 @@ from user_assumptions import user_assumptions
 from calc_database import calc_database
 from output import output
 
-def calc_dcf(assumptions):
+def calc_dcf(assumptions, ticker):
 	##### Global Variables
-
-	name = 'General Electric'
-	ticker = 'GE'
-
+	
 	### Tuple, Value Dictionaries (field, year) = value
 	fcf = {}
 
@@ -24,16 +20,18 @@ def calc_dcf(assumptions):
 	wacc = {}
 	enterprise_value = {}
 	implied_equity_value = {}
+	
+	### Gather Data from Quandl databases
+	tuple_data       = calc_database(ticker, fcf)
+	curr_year        = tuple_data[0]
+	fcf              = tuple_data[1]
+	name             = tuple_data[2]
 
 	### Years
-	curr_year = 2008   #curr_year = datetime.datetime.now().year
 	historical_years = [curr_year-3, curr_year-2, curr_year-1, curr_year]
 	projected_years  = [curr_year+1, curr_year+2, curr_year+3, curr_year+4, curr_year+5]
 
-
 	##### Main Execution
-
-	fcf                  = calc_database(fcf, historical_years)
 	fcf                  = calc_fcf(fcf, assumptions, curr_year, historical_years, projected_years)
 	wacc                 = calc_wacc(wacc, assumptions)
 	enterprise_value     = calc_enter_val(enterprise_value, assumptions, fcf, wacc, curr_year, projected_years)
