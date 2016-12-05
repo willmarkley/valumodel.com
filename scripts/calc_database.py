@@ -11,8 +11,12 @@ def calc_database(ticker, fcf):
 
 	for indicator in indicators:
 		code = 'SF0/'+ticker+'_'+indicator[0]+'_MRY'    ### generate database call
-		mydata = quandl.get(code, rows=4, returns="numpy")   ### return most recent 4 years as numpy array
-		if indicator[0] is 'REVENUE':
+		try:
+                    mydata = quandl.get(code, rows=4, returns="numpy")   ### return most recent 4 years as numpy array
+		except:
+                    print '<!doctype html><html><body><h1>Ticker not supported.  Please try another company.</h1></body></html>'
+                    sys.exit()
+                if indicator[0] is 'REVENUE':
 			curr_year = mydata[-1][0].year   ### access last array's (most recent) datetime object's year attribute
 
 		i=0
