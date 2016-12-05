@@ -6,7 +6,6 @@ sys.path.append('/var/www/html/valumodel.com/scripts')
 from calc_fcf import calc_fcf
 from calc_wacc import calc_wacc
 from calc_enter_val import calc_enter_val
-from user_assumptions import user_assumptions
 from calc_database import calc_database
 from output import output
 
