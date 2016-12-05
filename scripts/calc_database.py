@@ -3,7 +3,7 @@
 import sys
 sys.path.append('/home/ec2-user/apache_httpd_server')
 #import quandl
-from quandlapikey import quandlapikey
+#from quandlapikey import quandlapikey
 
 def calc_database(ticker, fcf):
 	data_revenue = [780.0, 850.0, 925.0, 1000.0]
