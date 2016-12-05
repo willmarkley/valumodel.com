@@ -24,7 +24,6 @@ def calc_dcf(assumptions, ticker):
 	tuple_data       = calc_database(ticker, fcf)
 	curr_year        = tuple_data[0]
 	fcf              = tuple_data[1]
-	name             = tuple_data[2]
 
 	### Years
 	historical_years = [curr_year-3, curr_year-2, curr_year-1, curr_year]
@@ -35,4 +34,4 @@ def calc_dcf(assumptions, ticker):
 	wacc                 = calc_wacc(wacc, assumptions)
 	enterprise_value     = calc_enter_val(enterprise_value, assumptions, fcf, wacc, curr_year, projected_years)
 
-	return output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value, assumptions, name, ticker)
+	return output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value, assumptions, ticker)

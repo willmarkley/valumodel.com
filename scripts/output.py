@@ -2,7 +2,7 @@
 
 from jinja2 import Environment, FileSystemLoader
 
-def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value, assumptions, name, ticker):
+def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value, assumptions, ticker):
 	data_fields = ['Revenue', 'Cost of Goods Sold', 'Selling, General, & Administrative', 'Depreciation & Amortization', 'Capital Expenditures']
 	user_fields = ['Growth Rate', 'Selling, General, & Administrative', 'Depreciation & Amortization', 'Capital Expenditures']
 	important_fields = ['Revenue','Gross Profit', 'EBITDA', 'EBIT', 'EBIAT', 'Free Cash Flow', 'Terminal Value', 'Present Value of Terminal Value', 'Enterprise Value']
@@ -51,4 +51,4 @@ def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_v
 
 	env = Environment(loader = FileSystemLoader('/var/www/html/valumodel.com/html/templates'))
 	template = env.get_template('dcf.html')
-	return template.render(name=name, ticker=ticker, rows_fcf=rows_fcf, historical_years=historical_years, fcf=fcf, projected_years=projected_years, years=years, data_fields=data_fields, user_fields=user_fields, important_fields=important_fields, wacc=wacc, rows_wacc=rows_wacc, rows_pfcf=rows_pfcf, rows_enter_val=rows_enter_val, enterprise_value=enterprise_value, rows_assumpt=rows_assumpt, assumptions=assumptions)
+	return template.render(ticker=ticker, rows_fcf=rows_fcf, historical_years=historical_years, fcf=fcf, projected_years=projected_years, years=years, data_fields=data_fields, user_fields=user_fields, important_fields=important_fields, wacc=wacc, rows_wacc=rows_wacc, rows_pfcf=rows_pfcf, rows_enter_val=rows_enter_val, enterprise_value=enterprise_value, rows_assumpt=rows_assumpt, assumptions=assumptions)

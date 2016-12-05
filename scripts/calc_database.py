@@ -26,7 +26,7 @@ def calc_database(ticker, fcf):
 		fcf[key] = data_capex[i]
 		i = i+1
 		
-	return (2016, fcf, 'Groupon')
+	return (2016, fcf)
 
 '''
 	quandl.ApiConfig.api_key = 'PVS8XsdfoZhuSS34A__o'
@@ -48,6 +48,6 @@ def calc_database(ticker, fcf):
 			else:
 				fcf[(indicator[1],start_year+i)] = mydata[i][1]/1000000   ### access value of indicator in a year
 
-	return (curr_year, fcf, 'Groupon')
+	return (curr_year, fcf)
 
 '''
