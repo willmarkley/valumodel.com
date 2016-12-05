@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
-#import quandl
+import sys
+sys.path.append('/var/www/html/valumodel.com/scripts')
+import quandl
+import quandlapikey from quandlapikey
 
 def calc_database(ticker, fcf):
 	data_revenue = [780.0, 850.0, 925.0, 1000.0]
