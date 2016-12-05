@@ -38,7 +38,14 @@ def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_v
 			enterprise_value[row] = round( enterprise_value[row], 2)
 		else:
 			enterprise_value[row] = round( enterprise_value[row], 1)
-				
+			
+	for row in rows_assumpt:
+		if row is 'Exit Multiple':
+			assumptions[row] = str( round( assumptions[row],1) )+"x"
+		else:
+			assumptions[row] = str( round( assumptions[row],1) )+"%"
+
+
 	fcf[('Growth Rate',(curr_year-3))] = ""
 	fcf[('Increase in Net Working Capital',(curr_year-3))] = ""
 
