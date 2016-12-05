@@ -43,7 +43,7 @@ def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_v
 		if row is 'Exit Multiple':
 			assumptions[row] = str( round( assumptions[row],1) )+"x"
 		else:
-			assumptions[row] = str( round( assumptions[row],1) )+"%"
+			assumptions[row] = str( round( assumptions[row]*100,1) )+"%"
 
 
 	fcf[('Growth Rate',(curr_year-3))] = ""
