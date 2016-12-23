@@ -20,4 +20,4 @@ def create_dcf(req, tax_rate, growth_rate_1_year_out, sga_of_sales, da_of_sales,
         if not ticker.isalnum():
             return '<!doctype html><html><body><h1>Invalid Ticker.  Please try again.</h1></body></html>'
 
-	return calc_dcf(assumptions, ticker)
+	return calc_dcf(assumptions, ticker.upper())
