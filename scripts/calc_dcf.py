@@ -21,7 +21,7 @@ def calc_dcf(assumptions, ticker):
 	implied_equity_value = {}
 	
 	### Gather Data from Quandl databases
-	tuple_data       = calc_database(ticker, fcf)
+	tuple_data       = calc_database(ticker)
 	curr_year        = tuple_data[0]
 	fcf              = tuple_data[1]
 
