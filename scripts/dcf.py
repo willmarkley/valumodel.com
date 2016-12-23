@@ -16,4 +16,8 @@ def create_dcf(req, tax_rate, growth_rate_1_year_out, sga_of_sales, da_of_sales,
 		assumptions['Exit Multiple']          = float(exit_multiple)
 	except ValueError:
 		return '<!doctype html><html><body><h1>Invalid DCF Input.  Please try again.</h1></body></html>'
+        ticker = ticker.split(' ')[0]
+        if not ticker.isalpha():
+            return '<!doctype html><html><body><h1>Invalid Ticker.  Please try again.</h1></body></html>'
+
 	return calc_dcf(assumptions, ticker)

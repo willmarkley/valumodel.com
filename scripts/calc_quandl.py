@@ -3,23 +3,25 @@
 import sys
 sys.path.append('/home/ec2-user/apache_httpd_server')
 import quandl
-from quandlapikey import quandlapikey
+#from quandlapikey import quandlapikey
 import yaml
 import getopt
 
 ticker = sys.argv[1]
 
-quandl.ApiConfig.api_key = quandlapikey
+#quandl.ApiConfig.api_key = quandlapikey
+quandl.ApiConfig.api_key = 'PVS8XsdfoZhuSS34A__o'
 indicators = [('REVENUE','Revenue'), ('GP','Cost of Goods Sold'), ('SGNA','Selling, General, & Administrative'), ('DEPAMOR','Depreciation & Amortization'), ('CAPEX','Capital Expenditures')]
+fcf = {}
 
 for indicator in indicators:
 	code = 'SF0/'+ticker+'_'+indicator[0]+'_MRY'    ### generate database call
 	try:
 		mydata = quandl.get(code, rows=4, returns="numpy")   ### return most recent 4 years as numpy array
 	except:
-		print '-1^^',
+		print '-1^^'
 		print '<!doctype html><html><body><h1>Ticker not supported.  Please try another company.</h1></body></html>'
-		sys.exit()
+		sys.exit(0)
 	if indicator[0] is 'REVENUE':
 		curr_year = mydata[-1][0].year   ### access last array's (most recent) datetime object's year attribute
 
@@ -34,5 +36,7 @@ for indicator in indicators:
 			fcf[(indicator[1],start_year+i)] = mydata[i][1]/1000000   ### access value of indicator in a year
 			
 
-print curr_year,
+print str(curr_year)+'^^'
 print yaml.dump(fcf)
+
+sys.exit(0)
