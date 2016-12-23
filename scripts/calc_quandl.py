@@ -5,7 +5,6 @@ sys.path.append('/home/ec2-user/apache_httpd_server')
 import quandl
 #from quandlapikey import quandlapikey
 import yaml
-import getopt
 
 ticker = sys.argv[1]
 

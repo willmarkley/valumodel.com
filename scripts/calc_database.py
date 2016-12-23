@@ -5,8 +5,8 @@ import yaml
 import sys
 
 def calc_database(ticker):
-        fcf = {}
-        output = subprocess.check_output(['python', '/var/www/html/valumodel.com/scripts/calc_quandl.py', ticker])
+    fcf = {}
+	output = subprocess.check_output(['python', '/var/www/html/valumodel.com/scripts/calc_quandl.py', ticker])
 	
 	curr_year = int(output.split("^^")[0])
 	
