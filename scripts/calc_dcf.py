@@ -24,7 +24,9 @@ def calc_dcf(assumptions, ticker):
 	tuple_data       = calc_database(ticker)
 	curr_year        = tuple_data[0]
 	fcf              = tuple_data[1]
-
+	if curr_year==-1:
+		return fcf
+	
 	### Years
 	historical_years = [curr_year-3, curr_year-2, curr_year-1, curr_year]
 	projected_years  = [curr_year+1, curr_year+2, curr_year+3, curr_year+4, curr_year+5]
