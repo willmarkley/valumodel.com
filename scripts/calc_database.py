@@ -12,8 +12,7 @@ def calc_database(ticker):
 	output = output.split('^^')[1]
 	
 	if curr_year==-1:
-		print output
-		sys.exit()
+		fcf=output
 	else:
 		for key, value in yaml.load(output).iteritems():
 			fcf[key] = value
