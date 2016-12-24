@@ -62,5 +62,6 @@ wacc['Risk Free Rate'] = mydata[0][1]/100  ## convert percentage to fraction
 
 print str(curr_year)+'^^'
 print yaml.dump(fcf)+'^^'
+print yaml.dump(wacc)+'^^'
 
 sys.exit(0)
