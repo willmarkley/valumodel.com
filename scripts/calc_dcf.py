@@ -24,6 +24,7 @@ def calc_dcf(assumptions, ticker):
 	tuple_data       = calc_database(ticker)
 	curr_year        = tuple_data[0]
 	fcf              = tuple_data[1]
+	wacc             = tuple_data[2]
 	if curr_year==-1:
 		return fcf
 	
