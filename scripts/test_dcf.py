@@ -5,7 +5,7 @@ sys.path.append('/var/www/html/valumodel.com/scripts')
 from calc_dcf import calc_dcf
 
 
-ticker = 'GRPN'
+ticker = 'NFLX'
 assumptions = {}
 assumptions['Tax Rate']               = 0.07
 assumptions['Growth Rate 1 year out'] = 0.07

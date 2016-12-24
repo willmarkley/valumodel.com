@@ -9,7 +9,7 @@ def calc_wacc(wacc, assumptions):
 	
 	market_risk_premium = 0.071  ### Constant
 		
-	wacc['% Debt']   = wacc['Total Debt'] / (wacc['Total Debt'] + wacc['Total Equity'])
+	wacc['% Debt']   = wacc['Total Debt'] / float(wacc['Total Debt'] + wacc['Total Equity'])
 	wacc['% Equity'] = 1 - wacc['% Debt']
 	wacc['% Debt']   = wacc['% Debt']*100
 	wacc['% Equity'] = wacc['% Equity']*100
