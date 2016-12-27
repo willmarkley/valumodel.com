@@ -1,14 +1,10 @@
 #!/usr/bin/python
 
-import sys
-sys.path.append('/home/ec2-user/apache_httpd_server')
 import quandl
-#from quandlapikey import quandlapikey
 import yaml
 
 ticker = sys.argv[1]
 
-#quandl.ApiConfig.api_key = quandlapikey
 quandl.ApiConfig.api_key = 'PVS8XsdfoZhuSS34A__o'
 indicators = [('REVENUE','Revenue'), ('GP','Cost of Goods Sold'), ('SGNA','Selling, General, & Administrative'), ('DEPAMOR','Depreciation & Amortization'), ('CAPEX','Capital Expenditures')]
 fcf = {}
