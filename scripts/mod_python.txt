@@ -1,0 +1,14 @@
+mod_python:
+
+
+
+need httpd24-devel
+
+change
+GIT=`git describe --always`
+
+to
+GIT=
+
+
+in dist/version.sh
