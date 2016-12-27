@@ -5,7 +5,6 @@ def calc_wacc(wacc, assumptions):
 	debt_coupon_rate = 0.06
 	debt_par_value = 3000.0
 	debt_market_price = 900.0
-	assumptions['Levered Beta'] = 1.2   ### have user enter
 	
 	market_risk_premium = 0.071  ### Constant
 		

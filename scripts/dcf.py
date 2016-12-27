@@ -13,6 +13,7 @@ def create_dcf(req, tax_rate, growth_rate_1_year_out, sga_of_sales, da_of_sales,
 		assumptions['D&A % of sales']         = float(da_of_sales)/100.0
 		assumptions['CAPEX % of sales']       = float(capex_of_sales)/100.0
 		assumptions['NWC % of sales']         = float(nwc_of_sales)/100.0
+		assumptions['Levered Beta']           = float(levered_beta)
 		assumptions['Exit Multiple']          = float(exit_multiple)
 	except ValueError:
 		return '<!doctype html><html><body><h1>Invalid DCF Input.  Please try again.</h1></body></html>'
