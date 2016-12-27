@@ -13,6 +13,7 @@ assumptions['SGA % of sales']         = 0.07
 assumptions['D&A % of sales']         = 0.07
 assumptions['CAPEX % of sales']       = 0.07
 assumptions['NWC % of sales']         = 0.07
+assumptions['Levered Beta']           = 1.2
 assumptions['Exit Multiple']          = 0.07
 
 print calc_dcf(assumptions, ticker)
