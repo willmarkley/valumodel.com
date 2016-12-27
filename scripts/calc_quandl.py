@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import sys
 import quandl
 import yaml
 
