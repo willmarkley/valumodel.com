@@ -12,7 +12,7 @@ def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_v
 	rows_pfcf = ['Discount Factor','Present Value of Free Cash Flow']
 	rows_wacc = ['Cost of Debt', '% Debt', 'Cost of Equity', '% Equity', 'WACC']
 	rows_enter_val = ['Terminal Year EBITDA', 'Exit Multiple', 'Terminal Value', 'Discount Factor', 'Present Value of Terminal Value', 'Cumulative Present Value of FCF', 'Enterprise Value']
-	rows_assumpt = ['Tax Rate', 'Growth Rate 1 year out', 'SGA % of sales', 'D&A % of sales', 'CAPEX % of sales', 'NWC % of sales','Exit Multiple']
+	rows_assumpt = ['Tax Rate', 'Growth Rate 1 year out', 'SGA % of sales', 'D&A % of sales', 'CAPEX % of sales', 'NWC % of sales','Levered Beta', 'Current Yield']
 
 	for row in rows_fcf:
 		for year in years:
@@ -40,7 +40,7 @@ def output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_v
 			enterprise_value[row] = round( enterprise_value[row], 1)
 			
 	for row in rows_assumpt:
-		if row is 'Exit Multiple':
+		if row is 'Levered Beta':
 			assumptions[row] = str( round( assumptions[row],1) )+"x"
 		else:
 			assumptions[row] = str( round( assumptions[row]*100,1) )+"%"
