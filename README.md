@@ -35,16 +35,22 @@ Web Application that creates discounted cash flow
 ### YUM
 
 httpd24  
-[mod_python](http://modpython.org)  
 libffi-devel  
 python-devel  
 openssl-devel  
 [mod24_ssl](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html)  
+[??mysql-server](http://www.mysql.com)  
+[??mysql-connectors](http://www.mysql.com)  
 
 ### PIP
 
 [Quandl](https://www.quandl.com)  
 [Jinja](http://jinja.pocoo.org)  
+
+### Source
+
+[mod_python](http://modpython.org)  
+
 
 ## Reference
 
