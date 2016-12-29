@@ -35,7 +35,7 @@ Web Application that creates discounted cash flow
 ### YUM
 
 httpd24  
-[mod_python](http://modpython.org)  
+[mod_python](http://modpython.org)  
 libffi-devel  
 python-devel  
 openssl-devel  
@@ -44,6 +44,7 @@ openssl-devel
 ### PIP
 
 [Quandl](https://www.quandl.com)  
+[Jinja](http://jinja.pocoo.org)  
 
 ## Reference
 
