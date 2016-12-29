@@ -32,7 +32,7 @@ Web Application that creates discounted cash flow
 
 ### Reference
 
-[Installing LAMP on AWS](https://docs.python.org/3/howto/webservers.html)  
-[Python in the Web](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)  
+[Installing LAMP on AWS](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)  
+[Python in the Web](https://docs.python.org/3/howto/webservers.html)  
   
   
