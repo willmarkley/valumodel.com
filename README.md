@@ -29,9 +29,23 @@ Web Application that creates discounted cash flow
 
 [Quandl](https://www.quandl.com)  
 [Jinja](http://jinja.pocoo.org)  
-[mod_python](http://modpython.org)  
 
-### Reference
+## Requirements
+
+### YUM
+
+httpd24  
+[mod_python](http://modpython.org)  
+libffi-devel  
+python-devel  
+openssl-devel  
+[mod24_ssl](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html)  
+
+### PIP
+
+[Quandl](https://www.quandl.com)  
+
+## Reference
 
 [Installing LAMP on AWS](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)  
 [Python in the Web](https://docs.python.org/3/howto/webservers.html)  
