@@ -30,4 +30,9 @@ Web Application that creates discounted cash flow
 [Quandl](https://www.quandl.com)  
 [Jinja](http://jinja.pocoo.org)  
 
+### Reference
+
+[Installing LAMP on AWS](https://docs.python.org/3/howto/webservers.html)  
+[Python in the Web](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)  
+  
   
