@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys
-sys.path.append('/var/www/html/valumodel.com/scripts')
+sys.path.append('/var/www/html/valumodel.com/scripts/dcf')
 from calc_dcf import calc_dcf
 
 def create_dcf(req, tax_rate, growth_rate_1_year_out, sga_of_sales, da_of_sales, capex_of_sales, nwc_of_sales, levered_beta, current_yield, exit_multiple, ticker):
