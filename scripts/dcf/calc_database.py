@@ -7,7 +7,7 @@ import sys
 def calc_database(ticker):
 	fcf = {}
 	wacc = {}
-        output = subprocess.check_output(['python', '/var/www/html/valumodel.com/scripts/calc_quandl.py', ticker])
+        output = subprocess.check_output(['python', '/var/www/html/valumodel.com/scripts/dcf/calc_quandl.py', ticker])
 	
 	curr_year = int(output.split('^^')[0])
 	output_fcf = output.split('^^')[1]
