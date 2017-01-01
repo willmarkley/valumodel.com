@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys
-sys.path.append('/var/www/html/valumodel.com/scripts')
+sys.path.append('/var/www/html/valumodel.com/scripts/dcf')
 from calc_dcf import calc_dcf
 
 
