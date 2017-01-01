@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys
-sys.path.append('/var/www/html/valumodel.com/scripts')
+sys.path.append('/var/www/html/valumodel.com/scripts/dcf')
 
 from calc_fcf import calc_fcf
 from calc_wacc import calc_wacc
@@ -37,6 +37,8 @@ def calc_dcf(assumptions, ticker):
 	fcf                  = calc_fcf(fcf, assumptions, curr_year, historical_years, projected_years)
 	wacc                 = calc_wacc(wacc, assumptions)
 	enterprise_value     = calc_enter_val(enterprise_value, assumptions, fcf, wacc, curr_year, projected_years)
-	mysql_statements()
+	
+	### Add Result to database
+	mysql_statements(ticker, enterprise_value['Enterprise Value'])
 
 	return output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value, assumptions, ticker)
