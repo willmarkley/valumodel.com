@@ -7,6 +7,7 @@ from calc_fcf import calc_fcf
 from calc_wacc import calc_wacc
 from calc_enter_val import calc_enter_val
 from calc_database import calc_database
+from mysql_statements import mysql_statements
 from output import output
 
 def calc_dcf(assumptions, ticker):
@@ -36,5 +37,6 @@ def calc_dcf(assumptions, ticker):
 	fcf                  = calc_fcf(fcf, assumptions, curr_year, historical_years, projected_years)
 	wacc                 = calc_wacc(wacc, assumptions)
 	enterprise_value     = calc_enter_val(enterprise_value, assumptions, fcf, wacc, curr_year, projected_years)
+    mysql_statements()
 
 	return output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value, assumptions, ticker)
