@@ -40,18 +40,13 @@ python-devel
 openssl-devel  
 [mod24_ssl](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html)  
 
-##### MySQL RPMs  
-###### MySQL Community Server  
+###### MySQL Community Server RPMs  
 From [mysql-5.7.17-1.el6.x86_64.rpm-bundle.tar](http://dev.mysql.com/downloads/mysql/)  
 [mysql-community-server](http://dev.mysql.com/doc/refman/5.7/en/linux-installation-rpm.html)  
 mysql-community-client  
 mysql-community-common  
 mysql-community-libs  
 mysql-community-libs-compat  
-
-###### MySQL Connector Python
-From [mysql-connector-python-2.1.5-1.el6.x86_64.rpm](http://dev.mysql.com/downloads/connector/python/)  
-[mysql-connector-python](http://dev.mysql.com/doc/connector-python/en/connector-python-installation-binary.html)  
 
 ### PIP
 
@@ -61,7 +56,8 @@ From [mysql-connector-python-2.1.5-1.el6.x86_64.rpm](http://dev.mysql.com/downlo
 ### Source
 
 [mod_python](http://modpython.org)  
-
+###### MySQL Connector Python
+[mysql-connector-python-2.1.5.tar.gz](http://dev.mysql.com/downloads/connector/python/)  
 
 ## Reference
 
