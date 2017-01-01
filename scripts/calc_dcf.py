@@ -37,6 +37,6 @@ def calc_dcf(assumptions, ticker):
 	fcf                  = calc_fcf(fcf, assumptions, curr_year, historical_years, projected_years)
 	wacc                 = calc_wacc(wacc, assumptions)
 	enterprise_value     = calc_enter_val(enterprise_value, assumptions, fcf, wacc, curr_year, projected_years)
-    mysql_statements()
+	mysql_statements()
 
 	return output(fcf, curr_year, historical_years, projected_years, wacc, enterprise_value, assumptions, ticker)
