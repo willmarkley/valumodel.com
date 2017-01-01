@@ -50,7 +50,8 @@ mysql-community-libs
 mysql-community-libs-compat  
 
 ###### MySQL Connector Python
-#[??mysql-connectors](http://www.mysql.com)  
+From [mysql-connector-python-2.1.5-1.el6.x86_64.rpm](http://dev.mysql.com/downloads/connector/python/)  
+[mysql-connector-python](http://dev.mysql.com/doc/connector-python/en/connector-python-installation-binary.html)  
 
 ### PIP
 
@@ -66,5 +67,6 @@ mysql-community-libs-compat
 
 [Installing LAMP on AWS](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)  
 [Python in the Web](https://docs.python.org/3/howto/webservers.html)  
-  
+[mod_python Documentation](http://modpython.org/live/current/doc-html/contents.html)  
+[MySQL Connector Python Documentation](http://dev.mysql.com/doc/connector-python/en/)  
   
