@@ -94,3 +94,20 @@ input[type=submit] {
 	border: 2px solid #b22613;
 	border-radius: 4px;
 }
+
+table {
+	border-collapse:collapse;
+	width:40%;
+	font-size:150%;
+	text-align:center;
+	margin:auto;
+	margin-top:15px;
+}
+
+table, th, td {
+	border: 1px solid #ccc;
+}
+
+th, td {
+	height:40px;
+}

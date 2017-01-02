@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html>
+<head>
+	<!-- <link rel="stylesheet" href="/valumodel.com/css/form-stylesheet.css"> -->
+	<link rel="stylesheet" href="../../css/form-stylesheet.css">
+	<title>DCF Assumptions</title>
+	<meta name="author" content="Will Markley">
+</head>
+
+<body>
+	<div class="header">
+		<a href="/">valumodel.com</a>
+	</div>
+	<div class="title">Average Enterprise Values by Ticker</div>
+	<table>
+		<th>Ticker</th>
+		<th>Enterprise Value</th>
+		{% for ticker in tickers %}
+		<tr>
+			<td>{{ ticker }}</td>
+			<td>${{ results[ticker] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
