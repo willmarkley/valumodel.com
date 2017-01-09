@@ -13,7 +13,7 @@
 		<a href="/">valumodel.com</a>
 	</div>
 	<div class="title">DCF Inputs & Assumptions</div>
-	<form action="/dcf/" method="POST" target="_blank">
+	<form onsubmit="checkForm(frm)" action="/dcf/" method="POST" target="_blank" id="frm">
 		<div class="row">
 			<div class="input-description">Stock Ticker:              </div>
 			<input type="text" name="ticker">
@@ -67,5 +67,7 @@
 			<input type="submit" value="Create DCF">
 		</div>
 	</form>
+	<script src="/valumodel.com/javascript/check-assumptions.js">
+	</script>
 </body>
 </html>
