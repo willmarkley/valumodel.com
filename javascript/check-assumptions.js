@@ -2,7 +2,7 @@
 
 function checkInput(inElement){
  	if( isNaN(inElement.value) ){
- 		inElement.style.background-color = "red";
+ 		inElement.style.backgroundColor = "red";
  	}
 }
 
