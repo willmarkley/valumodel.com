@@ -1,9 +1,11 @@
 // JavaScript to check user input
 
 function checkInput(inElement){
- 	if( isNaN(inElement.value) ){
- 		inElement.style.backgroundColor = "red";
- 	}
+	if( inElement.id != "NaN1" && inElement.id != "NaN2"){
+		if( isNaN(inElement.value) ){
+			inElement.style.backgroundColor = "ff6666";
+		}
+	}
 }
 
 
