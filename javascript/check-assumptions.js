@@ -8,7 +8,7 @@ function checkInput(inElement){
 
 
 function checkForm(id){
-	var formElement = document..getElementById(id);
+	var formElement = document.getElementById(id);
 	var i;
 	for(i = 0; i < formElement.length; i++){
 		checkInput(formElement.elements[i])
