@@ -4,7 +4,7 @@ body {
 	font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
-a {
+a.homepage {
 	color:white;
 	background-color:#95a9b7;
 	text-decoration:none;
@@ -23,7 +23,7 @@ a {
 
 
 .title{
-	padding-top:60px;
+	padding-top:20px;
 	font-size:350%;
 	padding-bottom:30px;
 	text-align:center;
@@ -111,3 +111,22 @@ table, th, td {
 th, td {
 	height:40px;
 }
+
+.copyright {
+	margin: auto;
+	padding-top:40px;
+	padding-bottom:12px;
+	font-size:12px;
+	text-align:center;
+	min-width:200px;
+}
+
+a.copyright-link {
+	color:#b22613;
+	margin-left:3px;
+	font-size:12px;
+	text-decoration:none;
+	text-align:center;
+}
+
+

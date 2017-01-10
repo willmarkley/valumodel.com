@@ -10,10 +10,10 @@
 
 <body>
 	<div class="header">
-		<a href="/">valumodel.com</a>
+		<a class="homepage" href="/">valumodel.com</a>
 	</div>
-	<div class="title">DCF Inputs & Assumptions</div>
-	<form onsubmit="checkForm()" action="/dcf/" method="POST" target="_blank" id="frm">
+	<div class="title">DCF Inputs and Assumptions</div>
+	<form onchange="checkForm()" action="/dcf/" method="POST" target="_blank" id="frm">
 		<div class="row">
 			<div class="input-description">Stock Ticker:              </div>
 			<input id="NaN1" type="text" name="ticker">
@@ -67,6 +67,10 @@
 			<input id="NaN2" type="submit" value="Create DCF">
 		</div>
 	</form>
+	<div class="copyright">
+		© 2017 
+		<a class="copyright-link" href="https://github.com/willmarkley" target="_blank"> William Markley</a>
+	</div>
 	<script src="/valumodel.com/javascript/check-assumptions.js">
 	</script>
 </body>

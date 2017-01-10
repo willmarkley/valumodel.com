@@ -5,6 +5,12 @@ function checkInput(inElement){
 		if( isNaN(inElement.value) ){
 			inElement.style.backgroundColor = "#ff6666";
 		}
+		else if (inElement.value == ""){
+			inElement.style.backgroundColor = "";
+		}
+		else{
+			inElement.style.backgroundColor = "#8bda8b";
+		}
 	}
 }
 
