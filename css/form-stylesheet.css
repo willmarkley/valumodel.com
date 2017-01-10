@@ -33,10 +33,14 @@ a.homepage {
 .row {
 	display:block;
 	width:500px;
-	height:20px;
+	height:30px;
 	margin: auto;
 	margin-bottom:10px;
 	display:block;
+}
+
+.row-button {
+	height:60px;
 }
 
 .input-description {
