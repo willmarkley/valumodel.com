@@ -3,7 +3,7 @@
 function checkInput(inElement){
 	//if( inElement.id != "NaN1" && inElement.id != "NaN2"){
 		if( isNaN(inElement.value) ){
-			inElement.style.backgroundColor = "ff6666";
+			inElement.style.backgroundColor = "#ff6666";
 		}
 	//}
 }
