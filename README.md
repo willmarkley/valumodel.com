@@ -5,14 +5,14 @@ Web Application that creates discounted cash flow
 
 ## Technology Stack
 
-### Back End
+#### Back End
 
 [Linux](https://en.wikipedia.org/wiki/LAMP_(software_bundle))  
 [Apache HTTP Server](https://httpd.apache.org)  
 [MySQL](https://www.mysql.com)  
 [Python](https://www.python.org)  
 
-### Front End
+#### Front End
 
 [HTML](http://www.w3.org/html/)  
 [CSS](http://www.w3.org/Style/CSS/)  
@@ -20,13 +20,13 @@ Web Application that creates discounted cash flow
 [Font Awesome](http://fontawesome.io)  
 [Font Mfizz](http://fizzed.com/oss/font-mfizz)
 
-### Hosting
+#### Hosting
 
 [Amazon Web Services](https://aws.amazon.com)  
 [Let's Encrypt](https://letsencrypt.org/)  
 [Certbot](https://certbot.eff.org)
 
-### Libraries
+#### Libraries
 
 [Quandl](https://www.quandl.com)  
 [Jinja](http://jinja.pocoo.org)  
