@@ -7,7 +7,10 @@ Web Application that creates discounted cash flow
 
 ### Back End
 
-[Linux](https://en.wikipedia.org/wiki/LAMP_(software_bundle)), [Apache HTTP Server](https://httpd.apache.org), [MySQL](https://www.mysql.com), [Python](https://www.python.org)  
+[Linux](https://en.wikipedia.org/wiki/LAMP_(software_bundle))  
+[Apache HTTP Server](https://httpd.apache.org)  
+[MySQL](https://www.mysql.com)  
+[Python](https://www.python.org)  
 
 ### Front End
 
