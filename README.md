@@ -1,5 +1,5 @@
 # valumodel.com
-Web Application that creates discounted cash flow
+A Linux Apache MySQL Python web application that generates discounted cash flow valuations
 
 [valumodel.com](https://valumodel.com)
 
