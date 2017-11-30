@@ -1,2 +1,7 @@
 language: python
-script: ./scripts/test_dcf.py
+install:
+  - pip install quandl
+  - pip install Jinja2
+script:
+  - cd scripts
+  - python test_dcf.py
