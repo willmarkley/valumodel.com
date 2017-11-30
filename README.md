@@ -3,6 +3,44 @@ A Linux Apache MySQL Python web application that generates discounted cash flow 
 
 [valumodel.com](https://valumodel.com)
 
+## Setup
+
+Assuming Apache and MySQL are already installed:
+
+* Clone the repository to the `/var/www/html` directory
+* Download `font-awesome-4.7.0` and `font-mfizz-2.3.0` to the `/var/www/html` directory
+* Copy `conf/httpd.conf` to the `/etc/httpd/conf` directory
+* Create symbolic link: `ln -s valumodel.com/html/index.html index.html` in the `/var/www/html` directory
+* Restart the Apache and MySQL:
+```
+#!/bin/bash
+
+sudo service httpd restart
+sudo service mysql restart
+
+```
+
+#### Maintenance
+
+###### SSL Renewal with Let's Encrypt
+
+```
+#!/bin/bash
+
+sudo service httpd stop
+sudo opt/certbot-auto --apache renew
+sudo service httpd restart
+```
+
+###### Cron to reset Apache everyday
+
+```
+# sudo crontab -e
+
+53 4 * * * service httpd restart
+```
+
+
 ## Technology Stack
 
 #### Back End
