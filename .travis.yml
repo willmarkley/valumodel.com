@@ -3,7 +3,7 @@ install:
   - pip install quandl
   - pip install Jinja2
   - pip install PyYAML
-  - apt-get install mysql-server
+  - sudo apt-get install mysql-server
 script:
   - pwd
   - export PYTHONPATH=${PYTHONPATH}:./scripts/dcf
