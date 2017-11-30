@@ -2,6 +2,7 @@ language: python
 install:
   - pip install quandl
   - pip install Jinja2
+  - pip install yaml
 script:
   - pwd
   - export PYTHONPATH=${PYTHONPATH}:./scripts/dcf
