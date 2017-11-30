@@ -22,6 +22,12 @@ Assuming Apache and MySQL are already installed:
 * Download `font-awesome-4.7.0` and `font-mfizz-2.3.0` to the `/var/www/html` directory
 * Copy `conf/httpd.conf` to the `/etc/httpd/conf` directory
 * Create symbolic link: `ln -s valumodel.com/html/index.html index.html` in the `/var/www/html` directory
+* Setup Databases and Password in MySQL:
+```
+mysql -u root -e "CREATE DATABASE valumodel; USE valumodel; CREATE TABLE avg (ticker VARCHAR(10), enterprise_value DOUBLE);"
+mysqladmin -u root password '$Dcfr$ck1'
+```
+
 * Restart the Apache and MySQL:
 ```
 #!/bin/bash
