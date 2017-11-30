@@ -4,7 +4,7 @@ install:
   - pip install Jinja2
   - pip install PyYAML
   - wget https://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-2.1.7.tar.gz
-  - tar xzf mysql-connector-python-2.1.7.tar.gz && cd mysql-connector-python-2.1.7 && sudo python setup.py install && cd ..
+  - tar xzf mysql-connector-python-2.1.7.tar.gz && cd mysql-connector-python-2.1.7 && python setup.py install && cd ..
 script:
   - pwd
   - export PYTHONPATH=${PYTHONPATH}:./scripts/dcf
