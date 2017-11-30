@@ -3,7 +3,10 @@ install:
   - pip install quandl
   - pip install Jinja2
   - pip install PyYAML
-  - pip install mysql-connector
+  - wget https://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-2.1.7.tar.gz
+  - tar xzf mysql-connector-python-2.1.7.tar.gz && cd mysql-connector-python-2.1.7 && python setup.py install && cd ..
+  - sudo mkdir -p /var/www/html/valumodel.com/scripts/dcf
+  - sudo ln -s /home/travis/build/willmarkley/valumodel.com/scripts/dcf/calc_quandl.py /var/www/html/valumodel.com/scripts/dcf/calc_quandl.py
 script:
   - pwd
   - export PYTHONPATH=${PYTHONPATH}:./scripts/dcf
