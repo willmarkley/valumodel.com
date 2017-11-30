@@ -4,7 +4,7 @@ import mysql.connector
 from jinja2 import Environment, FileSystemLoader
 
 def ticker_avgs(req):
-	cnx = mysql.connector.connect(user='root', password='$$Jasper19', host='127.0.0.1', database='valumodel')
+	cnx = mysql.connector.connect(user='root', password='$Dcfr$ck1', host='127.0.0.1', database='valumodel')
 	cursor = cnx.cursor()
     
 	## SELECT from database
