@@ -3,7 +3,7 @@
 import mysql.connector
 
 def mysql_statements(ticker, value):
-    cnx = mysql.connector.connect(user='root', password='$$Jasper19', host='127.0.0.1', database='valumodel')
+    cnx = mysql.connector.connect(user='root', password='$Dcfr$ck1', host='127.0.0.1', database='valumodel')
     cursor = cnx.cursor()
     
     ## INSERT into database
