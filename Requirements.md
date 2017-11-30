@@ -20,6 +20,7 @@ mysql-community-libs-compat
 
 [Quandl](https://www.quandl.com)  
 [Jinja](http://jinja.pocoo.org)  
+[PyYAML](https://github.com/yaml/pyyaml)  
 
 ## Source
 
