@@ -1,5 +1,5 @@
 language: python
-before-install:
+install:
   - pip install quandl
   - pip install Jinja2
   - pip install PyYAML
