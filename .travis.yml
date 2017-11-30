@@ -3,5 +3,6 @@ install:
   - pip install quandl
   - pip install Jinja2
 script:
-  - cd scripts
-  - python test_dcf.py
+  - pwd
+  - export PYTHONPATH=${PYTHONPATH}:./scripts/dcf
+  - python ./scripts/test_dcf.py
