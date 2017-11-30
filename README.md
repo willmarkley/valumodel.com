@@ -1,4 +1,7 @@
 # valumodel.com
+
+[![Build Status](https://travis-ci.org/willmarkley/valumodel.com.svg?branch=master)](https://travis-ci.org/willmarkley/valumodel.com)  
+
 A Linux Apache MySQL Python web application that generates discounted cash flow valuations
 
 [valumodel.com](https://valumodel.com)
