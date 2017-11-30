@@ -5,9 +5,10 @@ install:
   - pip install PyYAML
   - wget https://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-2.1.7.tar.gz
   - tar xzf mysql-connector-python-2.1.7.tar.gz && cd mysql-connector-python-2.1.7 && python setup.py install && cd ..
+script:
   - sudo mkdir -p /var/www/html/valumodel.com/scripts/dcf
   - sudo ln -s /home/travis/build/willmarkley/valumodel.com/scripts/dcf/calc_quandl.py /var/www/html/valumodel.com/scripts/dcf/calc_quandl.py
-script:
+  - sudo ln -s /home/travis/build/willmarkley/valumodel.com/html/templates /var/www/html/valumodel.com/html/templates
   - mysql -u root -e "CREATE DATABASE valumodel; USE valumodel; CREATE TABLE avg (ticker VARCHAR(10), enterprise_value DOUBLE);"
   - mysqladmin -u root password '$Dcfr$ck1'
   - export PYTHONPATH=${PYTHONPATH}:./scripts/dcf
