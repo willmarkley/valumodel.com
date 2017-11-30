@@ -3,6 +3,14 @@ A Linux Apache MySQL Python web application that generates discounted cash flow 
 
 [valumodel.com](https://valumodel.com)
 
+![valumodel1](https://raw.githubusercontent.com/willmarkley/willmarkley.com/master/img/valumodel1.png)  
+![valumodel2](https://raw.githubusercontent.com/willmarkley/willmarkley.com/master/img/valumodel2.png)  
+![valumodel3](https://raw.githubusercontent.com/willmarkley/willmarkley.com/master/img/valumodel3.png)  
+![valumodel4](https://raw.githubusercontent.com/willmarkley/willmarkley.com/master/img/valumodel4.png)  
+![valumodel5](https://raw.githubusercontent.com/willmarkley/willmarkley.com/master/img/valumodel5.png)  
+![valumodel6](https://raw.githubusercontent.com/willmarkley/willmarkley.com/master/img/valumodel6.png)  
+
+
 ## Setup
 
 Assuming Apache and MySQL are already installed:
