@@ -8,6 +8,7 @@ install:
   - sudo mkdir -p /var/www/html/valumodel.com/scripts/dcf
   - sudo ln -s /home/travis/build/willmarkley/valumodel.com/scripts/dcf/calc_quandl.py /var/www/html/valumodel.com/scripts/dcf/calc_quandl.py
 script:
-  - pwd
+  - mysql -u root -e "CREATE DATABASE valumodel; USE valumodel; CREATE TABLE avg (ticker VARCHAR(10), enterprise_value DOUBLE);"
+  - mysqladmin -u root password $Dcfr$ck1
   - export PYTHONPATH=${PYTHONPATH}:./scripts/dcf
   - python ./scripts/test_dcf.py
