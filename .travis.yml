@@ -3,7 +3,8 @@ install:
   - pip install quandl
   - pip install Jinja2
   - pip install PyYAML
-  - sudo apt-get install mysql-server
+  - wget https://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-2.1.7.tar.gz
+  - cd mysql-connector-python-2.1.7 && sudo python setup.py install
 script:
   - pwd
   - export PYTHONPATH=${PYTHONPATH}:./scripts/dcf
