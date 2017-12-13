@@ -4,7 +4,7 @@
 
 A Linux Apache MySQL Python web application that generates discounted cash flow valuations
 
-[valumodel.com](https://valumodel.com)
+[valumodel.com](https://valumodel.willmarkley.com)
 
 ![valumodel1](https://raw.githubusercontent.com/willmarkley/willmarkley.com/master/img/valumodel1.png)  
 ![valumodel2](https://raw.githubusercontent.com/willmarkley/willmarkley.com/master/img/valumodel2.png)  
